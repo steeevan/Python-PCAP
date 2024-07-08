@@ -82,12 +82,12 @@ else:
 '''
 #**********************************************************************************************
 '''
-2 Literals
+ Literals
 
-2.1 String Literals
+1.6 String Literals
 - String literals can enclosed in single quotes, double quotes, or triple quotes.
 '''
-# Example 2
+# Example 1.6
 my_first_string = 'Hello World'
 my_second_string = "Hello World Part 2"
 my_third_string = '''Hello World Part 3'''
@@ -100,10 +100,10 @@ my_fifth_string = r"Line1. \n Line 2"
 print(my_fifth_string)
 
 '''
-2.2 Boolean Literals
+1.7 Boolean Literals
 - Boolean literals are 'True' and 'False'
 '''
-# Example 2.2 
+# Example 1.7
 my_first_boolean = True
 my_second_boolean = False
 
@@ -115,10 +115,10 @@ print( 0 == True)
 print(0 == False)
 
 '''
-2.3 Numerical Literals
+1.8 Numerical Literals
 - Python supports integers, floating-points, and imaginary literals
 '''
-# 2.3.1 Integer Literals
+# 1.8 Integer Literals
 decimal_integer = 100
 binary_integer = 0b1100100
 octal_integer = 0o144
@@ -131,7 +131,7 @@ print(octal_integer)
 print(hexadecimal_integer)
 print(decimal_groupings_integer)
 
-# 2.3.2 Floating Point Literals
+# 1.9 Floating Point Literals
 my_first_number = 3.14
 my_second_number = 10e2
 my_third_number = 100e-5
@@ -146,7 +146,7 @@ print(my_fourth_number)
 print(my_fifth_number)
 print(my_sixth_number)
 
-# 2.4 Special Literals
+# 1.99 Special Literals
 # Python has special literlas 'None' which represents the absence of value
 x = None
 print(x)
@@ -156,7 +156,7 @@ else:
     print('x is not True')
 print(bool(None))
 
-# 2.5 Imaginary Literals
+#  Imaginary Literals
 # Imaginary literals
 my_first_complex_number = 10j
 my_second_complex_number = .10j
