@@ -122,3 +122,42 @@ elif individual1_first_name.upper() == individual2_first_name.upper():
     print("Both individuals share the same first name when uppercased")
 else:
     print("No name match found")
+
+'''
+6.9 String Methods
+String methods: Python provides a variety of built-in methods for string manipulation, such as
+ lower(), upper(), strip(), replace(), find(), startswith(), endswith(), split(), and join().
+'''
+# Example 6.9
+# Create a new string literal
+my_string = "    Hello! My name is Jillur Quddus and I am a Chief Data Scientist and Principal Polyglot Software Engineer.    "
+print(my_string)
+
+# str.lower()
+print(my_string.lower())
+
+# str.upper()
+print(my_string.upper())
+
+# str.strip()
+stripped_string = my_string.strip()
+print(stripped_string)
+
+# str.replace('find', 'replacewith')
+initialized_string = stripped_string.replace('Jillur', 'J').replace('Quddus', 'Q')
+print(initialized_string)
+
+# str.find('substring')
+print(initialized_string.find('Data Scientist'))
+
+# str.startswith('substring')
+print(initialized_string.startswith('Hello!'))
+
+# str.endswith('substring')
+print(initialized_string.endswith("Good Bye!"))
+
+# str.split('delimiter')
+print(initialized_string.split('!'))
+
+# delimiter.join([list])
+print('|'.join(['Chief Data Scientist', 'Principal Polyglot Software Engineer', 'Technical Architect']))
