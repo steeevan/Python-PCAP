@@ -7,3 +7,11 @@ numbers.insert(15,20)
 numbers.remove(20)
 numbers.pop(16)
 numbers.clear()
+
+# Use methods like index(), count(), sort(), reverse(), and copy() on a list.
+print(numbers.index(10))
+print(numbers.count(3))
+print(numbers.sort())
+print(numbers.reverse())
+numbers3 = numbers.copy()
+print(numbers3)

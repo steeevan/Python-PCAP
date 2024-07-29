@@ -119,7 +119,7 @@ for x in range(len(my_diatomic_list)):
 # Example 9.5.3 Iterate the list using a for loop with the 'in' operator
 for elem in my_diatomic_list:
     print(elem)
-# Example 9.5.4 Iterate teh list using the enumerate function
+# Example 9.5.4 Iterate the list using the enumerate function
 for idx, elem in enumerate(my_diatomic_list):
     print(f'Diatomic Sequence - Element #{idx + 1}: {elem}')
 
@@ -142,3 +142,71 @@ if y not in squares:
     print(f'{y} does not exists in our list of square numbers')
 else:
     print(f'{y} exists in our list of square numbers')
+
+'''
+9.7 List Comprehension
+- List comprehension provides a conscise way of creating lists
+'''
+# Example 9.7.1
+squares = [num * num for num in range(1,9)]
+print(squares)
+
+# Example 9.7.2 Create a list formed of characters from a string
+letters_in_abibliophobia = [character for character in 'abibliophobia']
+print(letters_in_abibliophobia)
+
+# Example 9.7.3
+def isPrime(num):
+    if num <= 1 or num % 1 > 0:
+        return False
+    for i in range(2, num//2):
+        if num % i == 0:
+            return False
+    return True
+
+prime_numbers = [i for i in range(1, 101) if isPrime(i)]
+print(prime_numbers)
+
+# Example 9.7.4
+even_numbers_zeroed_odd = [i if i % 2 ==0 else 0 for i in range(1,101)]
+print(even_numbers_zeroed_odd)
+
+'''
+9.8 Multi-Dimensional Arrays
+- List that contains other lists
+'''
+# Example 9.8.1
+my_2d_array = [[1,2,3],[4,5,6],[7,8,9]]
+for row in my_2d_array:
+    for elem in row:
+        print(elem, end = ' ')
+    print()
+# Example 9.8.2 Create a two dimensional array with list comprehension
+number_cols = 3
+number_rows = 3
+my_2d_array = [[0 for i in range(number_cols)] for j in range(number_rows)]
+for row in my_2d_array:
+    for elem in row:
+        print(elem, end = ' ')
+    print()
+
+# Example 9.8.3 Access elements using square brackets and indices
+my_2d_array = [[1,2,3],[4,5,6],[7,8,9]]
+print(my_2d_array[0][0])
+print(my_2d_array[1][1])
+print(my_2d_array[2][2])
+
+# Example 9.8.4 Manipulate a 2d Dimensional Array
+my_2d_array = [[1,2,3],[4,5,6],[7,8,9]]
+
+my_2d_array[1][1] = 0
+my_2d_array.insert(2,[9,9,9])
+my_2d_array.append([7,4,7])
+my_2d_array[0].extend([0,0])
+my_2d_array[2].reverse()
+del my_2d_array[3]
+
+for row in my_2d_array:
+    for elem in row:
+        print(elem, end = ' ')
+    print()
