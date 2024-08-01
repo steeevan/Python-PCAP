@@ -2,10 +2,10 @@
 Loop - 
 Infinite Loop - 
 Index - 
-Slicing - 
-Shallow Copy - 
-Deep Copy - 
-List Comprehension - 
+Slicing - A technique used to extract a portion of a list by specifying a start and end index.
+Shallow Copy - A shallow copy creates a new list object but does not create copies of the objects within the list.
+Deep Copy - A deep copy creates a new list object and also recursively copies all objects within the original list, creating fully independent copies.
+List Comprehension - List comprehension is a concise way to create lists using a single line of code. 
 Function - Code that can be reused with different inputs
 Recursion - 
 String Concatenation - 
