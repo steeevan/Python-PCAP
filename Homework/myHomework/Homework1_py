@@ -1,0 +1,44 @@
+# Activity 1
+import math
+x = 5
+def calculate_area():
+    x = 5 ** 2 * 3.14
+    return x
+print(x)
+
+# Activity 2
+print("Plear input your last three test scores below: ")
+f = str(input("Input your first test score: "))
+n = str(input("Input your second test score: "))
+c = str(input("Innput your last test score: "))
+def test(e, r, t, ):
+    c = e + r + t
+    return c
+print(c)
+
+# Activity 3
+f = input("Input your name: ")
+n = int(input("Input your salary: "))
+print(f'Your name is {f} and your salary is {n}')
+
+# Activity 4
+f = int(input('Choose a number:'))
+
+if f % 2 == 0:
+    print("your number is even!")
+else:
+    print("Your number is odd")
+
+if f < 0:
+    print("Your number is negative")
+elif f == 0:
+    print("Not positive or negative")
+else:
+    print("Your number is positive")
+print(f)
+
+
+# Activity 5
+movies = ["Cocomelon the Movie", "My Little Pony", "Ruch Hour 1", "Rush Hour 2", "Rush Hour 3" ]
+movies.insert("Men in Black"(2))
+print(movies)
