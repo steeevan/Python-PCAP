@@ -1,0 +1,29 @@
+Loop
+A structure that allows repeating a block of code multiple times.
+
+Infinite Loop
+A loop that runs endlessly because its terminating condition is never met.
+
+Index
+The position of an element in a sequence, starting from 0.
+
+Slicing
+Extracting a portion of a sequence by specifying a start, stop, and step.
+
+Shallow Copy
+A copy of a collection object that only copies the references to the objects within the collection.
+
+Deep Copy
+A copy of a collection object that recursively copies all objects within the collection.
+
+List Comprehension
+A concise way to create lists using a single line of code.
+
+Function
+A block of reusable code that performs a specific task.
+
+Recursion
+A function that calls itself in order to solve a problem.
+
+String Concatenation
+Combining two or more strings into a single string.
