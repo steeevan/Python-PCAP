@@ -1,4 +1,11 @@
 '''
+git branch
+git add .
+git commit -m "blah blah blah"
+git push origin (whatever branch your in)
+'''
+
+'''
 Lesson Plan: Funamental Building Blocks of Python
 
 Objectives:
