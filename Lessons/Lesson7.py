@@ -7,12 +7,19 @@ Understanding Loops in Python
 - Else keyword in loops
 - nested loops
 - break and continue
+=======
+- utilize the range function in loops
+- else keyword in loops
+- nested loops
+- break and continue keywords
 '''
 
 '''
 7 LOOPS
 
 7.1 While loops
+=======
+7.1 While Loops
 
 - A while loop repeatedly executes a block of code as long as a specified condition is true
 '''
@@ -43,6 +50,8 @@ while counter <= 10:
     counter += 1
 else:
     print(f"The sum of the first 10 positive integer values is {sum}")
+=======
+    print(f'The sum of first 10 positive integer values is {sum}')
 
 '''
 7.3 For loop
@@ -53,6 +62,10 @@ a block of code for each element
 shopping_list = ["Apples", "Bananas", "Butter"]
 for shopping_item in shopping_list:
     print(f"{shopping_item}: {len(shopping_item)}")
+=======
+shopping_list = ['Apples', 'Bananas', 'Butter']
+for shopping_item in shopping_list:
+    print(f'{shopping_item}: {len(shopping_item)}')
 
 '''
 7.4 Range Function
@@ -64,10 +77,14 @@ for shopping_item in shopping_list:
 for n in range(10):
     print(n)
 # Examples 7.4.2
+=======
+# Example 7.4.2
 # Range function with two arguments
 # prints 10 - 19
 for n in range(10, 20):
     print(n)
+=======
+
 # Example 7.4.3
 # Range function with three arguments
 # prints every second number from 10 - 18
@@ -91,6 +108,21 @@ else:
 
 '''
 7.6 Break Statement
+=======
+    (without encountering a break statement)
+'''
+# Examples 7.5
+for n in range(3):
+    password_attempt = input('Please enter your password: ')
+    if password_attempt == 'Passw0rd123!':
+        print('Successful authentication')
+        break
+else:
+    print('Your account has been locked after 3 failed attempts to login.')
+    print('Please contact your system administrator to unlock your account.')
+
+'''
+7.6 Break Statement 
 - The break statement terminates the loop prematurely
 '''
 # Example 7.6
@@ -105,6 +137,11 @@ while guess_counter < guess_limit:
     guess_counter += 1
     if guess < random_number:
         print("Too low!")
+=======
+    guess = int(input(f'Attempt #{guess_counter + 1} Enter your guess: '))
+    guess_counter += 1
+    if guess < random_number:
+        print('Too low!')
     elif guess > random_number:
         print('Too high!')
     else:
@@ -124,6 +161,19 @@ moves to the next iteration
 # Example 7.7
 shopping_list = ["Apples", "Bananas", "Potatoes", "Tomatoes", "Milk", "Cheese", "Eggs", "Butter"]
 dairy_products = ["Milk", "Cheese", "Eggs", "Butter"]
+=======
+    print(f'Congratulations! You guessed correctly in {guess_counter} attempts!')
+else:
+    print(f'Sorry! Game Over! The number I was thinking of was {random_number}.')
+
+'''
+7.7 Continue Statement
+- THe continue statement skips the rest of the code inside the loop for the current iteration and
+    moves to the next iteration
+'''
+# Example 7.7
+shopping_list = ['Apples', 'Bananas', 'Potatoes', 'Tomatoes', 'Milk', 'Cheese', 'Eggs', 'Butter']
+dairy_products = ['Milk', 'Cheese', 'Eggs', 'Butter']
 for shopping_item in shopping_list:
     if shopping_item in dairy_products:
         continue
@@ -132,6 +182,8 @@ for shopping_item in shopping_list:
 '''
 7.8 Nested Loops
 - Nested Loops are loops inside loops. Each time the outer loop runs, the inner loop runs completely.
+=======
+- Nested Loops are loops insides loops. Each time the outer loop runs the inner loops runs completely.
 '''
 # Example 7.8
 number_columns = 5
@@ -142,6 +194,10 @@ for row in range(number_rows):
     for column in range(number_columns -1):
         print(fill_character, end=' ')
     print(' ')
+=======
+    for column in range(number_columns - 1):
+        print(fill_character, end=' ')
+    print('')
 '''
 Explanation:
 The outer loop runs for each row.
@@ -154,11 +210,19 @@ The rectangle is printed with the specified dimensions.
 8 Advanced Strings in Python
 - Understand and use character encodings
 - Ultilize escape characters
+=======
+# ***************************************************************************************************
+'''
+8 Advanced Strings in Python
+- Understand and ue character encodings
+- Utilize escape characters
 - Explain and handle immutable strings
 - Work with multi line strings
 - Compare strings effectively
 - Slicing/cloning techniques
 - Common string methods and functions
+=======
+- common string methods and functions
 '''
 
 '''
@@ -188,6 +252,56 @@ directions = "The name of the hospital"
 print("Escaping a \' single quote character")
 
 # Escape sequences start with a backslash (\)
+=======
+- Character encodings are methods of converting characters into bytes and vice versa. Unicode 
+    is the most common encoding used in Python
+'''
+# Example 8.1.1
+hospital_in_french = 'hôpital'
+hospital_in_japanese = '病院'
+hospital_in_arabic = 'مستشفى'
+print(f'The name for Hospital in French is: {hospital_in_french}')
+print(f'The name for Hospital in Japanese is: {hospital_in_japanese}')
+print(f'The name for Hospital in Arabic is: {hospital_in_arabic}')
+
+# Example 8.1.2
+日本の人口 = 126_500_000
+print(f'The population of Japan is: {日本の人口}')
+
+# Example 8.1.3
+directions = 'The name of the hospital is Charité - Universitätsmedizin Berlin'
+print(directions.encode(encoding="ascii", errors="backslashreplace"))
+print(directions.encode(encoding="ascii", errors="ignore"))
+print(directions.encode(encoding="ascii", errors="namereplace"))
+print(directions.encode(encoding="ascii", errors="replace"))
+print(directions.encode(encoding="ascii", errors="xmlcharrefreplace"))
+
+# Example 8.1.4
+names = ['Quddus', 'Gößmann', 'José']
+print(ascii(names))
+
+# Example 8.1.5
+dragon = "竜"
+print(f'The Unicode code point value for {dragon} is {ord(dragon)}')
+
+'''
+8.2 Escape Sequences
+- Escape Sequences allow the inclusion of special characters in strings
+'''
+# Example 8.2
+print('Escaping a \' single quote character')
+print("Escaping a \" double quote character")
+print('Escaping a \\ backslash character')
+print('Escaping a \newline character')
+print('Escaping an \a ASCII bell character')
+print('Escaping an \b ASCII backspace character')
+print('Escaping an \f ASCII formfeed character')
+print('Escaping an \n ASCII linefeed character')
+print('Escaping an \r ASCII carriage return character')
+print('Escaping an \t ASCII horizontal tab character')
+print('Escaping an \v ASCII vertical tab character')
+
+# Escape sequences start with a backslash (\) 
 # and are followed by a character that indicates the type of special character.
 
 '''
@@ -198,12 +312,22 @@ print("Escaping a \' single quote character")
 test_string = "Hello World"
 print(test_string[6])
 #test_string[6]="Q"
+=======
+- Strings in Python are immutable, meaning they cannot be changes after they are created
+'''
+# Example 8.3.1 
+test_string = 'Hello World'
+print(test_string[6])
+test_string[6] = "Q"
 
 # Example 8.3.2
 my_first_string = 'abracadabra'
 my_second_string = 'abracadabra'
 print(f"id(my_first_string) = {id(my_first_string)}")
 print(f"id(my_second_string) = {id(my_second_string)}")
+=======
+print(f'id(my_first_string) = {id(my_first_string)}')
+print(f'id(my_second_string) = {id(my_second_string)}')
 for idx in range(0, len(my_first_string)):
     print(f'{my_first_string[idx]} = {id(my_first_string[idx])}')
 
@@ -212,6 +336,10 @@ for idx in range(0, len(my_first_string)):
 my_string = "I am a Data Scientist"
 print(my_string)
 my_string = "I am a Software Engineer"
+=======
+my_string = 'I am a Data Scientist'
+print(my_string)
+my_string = 'I am a Software Engineer'
 print(my_string)
 
 '''
@@ -222,6 +350,10 @@ print(my_string)
 my_multiline_string = '''Line 1\tEOL
 Line 2\t\tEOL
 Line      EOL'''
+=======
+my_multiline_string = '''Line 1\tEOL 
+Line 2\t\tEOL
+Line 3    EOL'''
 print(my_multiline_string)
 
 '''
@@ -229,6 +361,17 @@ print(my_multiline_string)
 - Strings can be compared using comparison operators
 '''
 # Compare strings with different code point sequences
+=======
+- Strings can be compares using comparison operators
+'''
+# Compare strings with different code point sequences
+umlaut_sequence_1 = '\u00F6'
+umlaut_sequence_2 = '\u006F\u0308'
+print(f'{umlaut_sequence_1} has length {len(umlaut_sequence_1)}')
+print(f'{umlaut_sequence_2} has length {len(umlaut_sequence_2)}')
+import unicodedata
+print(umlaut_sequence_1 == umlaut_sequence_2)
+print(unicodedata.normalize('NFD', umlaut_sequence_1) == unicodedata.normalize('NFD', umlaut_sequence_2))
 
 '''
 8.6 Advanced String Slicing
@@ -237,6 +380,9 @@ print(my_multiline_string)
 # Example 8.6
 # Advanced slicing techniques
 my_string = "abracadabra"
+=======
+# Advanced slicing teqniques
+my_string = 'abracadabra'
 print(my_string[::2])
 print(my_string[::-2])
 print(my_string[4:10:2])
@@ -247,13 +393,37 @@ print(my_string[4::2])
 - Strings can be copied or cloned using slicing
 '''
 # Example 8.7
+=======
+my_first_string = 'abracadabra'
+my_second_string = 'abracadabra'
+print(f'id(my_first_string) = {id(my_first_string)}')
+print(f'id(my_second_string) = {id(my_second_string)}')
+my_third_string = my_first_string[4:]
+print(f'my_third_string = \'{my_third_string}\'')
+print(f'id(my_third_string) = {id(my_third_string)}')
 
 '''
 8.8 String Methods
 '''
 # Example 8.8
+=======
+print('MY NAME IS JILLUR'.isupper())
+print('my name is jillur Q'.islower())
+print('learning python'.isalpha())
+print('learning python 3'.isalnum())
+print('01092020'.isdecimal())
+print(' \t\n\t\v  '.isspace())
+print('Jillur Quddus'.istitle())
+print('capitalize me'.capitalize())
 
 '''
 8.9 String Functions
 '''
 # Example 8.9
+=======
+# Example 8.9
+print(len('abracadabra'))
+print(chr(9786))
+print(ord('愛'))
+
+
