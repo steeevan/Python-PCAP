@@ -1,9 +1,7 @@
----
-
 ## Lesson Plan: Functions in Python
 
 ### Objectives
-By the end of this lesson, students will be able to:
+'''By the end of this lesson, students will be able to:
 - Understand what functions are and why they are used.
 - Define and call functions in Python.
 - Use parameters and return values.
@@ -256,7 +254,7 @@ Sure! Here are some medium and hard exercises for students to practice their und
 
 3. **Sudoku Validator**
    - Write a function `is_valid_sudoku(board)` that takes a 9x9 2D list representing a Sudoku board and returns `True` if the board is valid according to Sudoku rules, and `False` otherwise.
-     ```python
+     ```python'''
      def is_valid_sudoku(board):
          def is_valid_unit(unit):
              unit = [i for i in unit if i != '.']
@@ -291,7 +289,5 @@ Sure! Here are some medium and hard exercises for students to practice their und
      ]
      
      print(is_valid_sudoku(sudoku_board))  # Output: True
-     ```
 
----
 

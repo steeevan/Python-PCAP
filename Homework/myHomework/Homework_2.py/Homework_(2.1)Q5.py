@@ -9,4 +9,8 @@ while i < len(list):
     print(f"List element #{i+1}: {list[i]}")
     i+=1
 
-for
+for i in range(len(list)):
+    print(f"List element #{i+1}: {list[i]}")
+
+for idx, i in enumerate(list):
+    print(f"List Element #{idx + 1}: {i}")
