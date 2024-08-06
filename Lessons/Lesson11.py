@@ -128,7 +128,13 @@ mypackage/
 '''
 
 import mypackages
-#print(dir(mypackages))
+
+
+# Import a module from a package
+import mypackages.module1 as mod1
+pet2 = mod1.Animal()
+
+# Create objects using the modules
 pet = mypackages.module1.Animal()
 pet.set_animal("Waffles")
 print(pet.get_animal())
