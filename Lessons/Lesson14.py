@@ -16,5 +16,10 @@ Files are opened using the 'open()' function. This function returns a file objec
 methods and attributes to interact with file content
 '''
 # Open a file to read
-file = open('Example1.txt','r')
+try:
+    file = open(r'Lessons\myfiles\Example1.txt','r')
+except:
+    print("Failed to open")
 
+content = file.read()
+print(content.split())
