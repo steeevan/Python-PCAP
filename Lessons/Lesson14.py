@@ -23,3 +23,4 @@ except:
 
 content = file.read()
 print(content.split())
+
