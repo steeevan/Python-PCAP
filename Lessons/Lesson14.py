@@ -1,49 +1,57 @@
 '''
 16 I/O Basics and Exception Handling
-By the end of this lesson, students will be able to:
+- Understand the basics of input and output from files
+- Open, read, and write to files
+- Differentaite betweem binary and text files
+- USe 'bytearray' objects and their methods
+- UNderstand and implement exception handling 'try-except-else-finally' blocks
+- Recognize predefined exceptions and their heirchy
+- Use assertion and understand the anamtomy of an exception object
+- Apply concepts required for the PCAP exam
+'''
 
-- Understand the basics of input and output (I/O) in Python.
-- Open, read, and write to files.
-- ifferentiate between binary and text files.
-- Use bytearray objects and their associated methods.
-- Understand and implement exception handling using try-except-else-finally blocks.
-- Recognize predefined exceptions and their hierarchies.
-- Use assertions and understand the anatomy of an exception object.
 '''
-'''
-16.1 Opening Files
-Files are opened using the 'open()' function. This function returns a file object, which provides
-methods and attributes to interact with file content
+16.1 I/O Basics
+Opening Files mean creating a connection between the file and a file object in python.
+THi is done using the 'open()' function
+keywords:
+'open()' : funciton to open a file
+'mode': specifies the mode in which the file is opened
+
 -'r' : Read mode (default). OPens the file for reading
 - 'w': Write mode. Opens file for writing ( creates a new file or truncates an existing file)
 - 'a': append mode. opens the file for writing, appending to the end of the file
 - 'b': binary mode. USed in conjuction with other modes to open the file in binary mode
 '''
-# examples with non-existent files
 
-# Opens in reading mode
-#myfile = open('example.txt', 'r')
+# Examples with non-existent file
 
-# Open a file in write mode ( this will create the file)
+# Open a file in read mode
+#myfile = open('example.txt','r')
+
+# open a file in write mode ( this will create the file)
 #myfile = open('example.txt','w')
 
+# open file in append mode
+#myfile = open('example.txt','a')
 
-# Open a file in append mode
-#myfile = open('eaxmple.txt','a')
+# open file in binary mode
+##myfile = open('example.txt','rb')
+#content = myfile.read()
+#print(content)
 
-# open a file in binary mode
-#myfile = open('example.txt','rb')
-
-# Open a file named Example1.txt
+# Open a file named book1.txt and read its contents
 try:
-    file = open(r'Lessons\myfiles\Example1.txt','r')
-    print("File was opened!")
-    content = file.read()
-    print(content)
+
+    file = open(r'Lessons\myfiles\book1.txt','r')
+    print("FIle was open successfully")
 except:
     print("File did not open")
 
+content = file.read()
+#print(content)
 file.close()
+
 '''
 read(size): Reads the entire file or specified number of bytes.
 readline(): Reads one line from the file.
@@ -52,90 +60,175 @@ write(string): Writes a string to the file.
 writelines(lines): Writes a list of strings to the file.
 close(): Closes the file.
 '''
-
-
 '''
 16.2 Reading the file line by line
-TO read a file line by line you can use the readline() method or iterate over the file object directly
+To read a file line by line you can se the readline() method or iterate over the
+file object directly
 '''
-
-with open(r'Lessons\myfiles\Example1.txt','r') as file:
+with open(r'Lessons\myfiles\book1.txt','r') as file:
     line = file.readline()
     print(line)
-    line = file.readline()
-    print(line)
-
-    file.close()
-
-with open(r'Lessons\myfiles\Example1.txt','r') as file:
-    line = file.readline()
     while line:
-        print(line)
         line = file.readline()
-        print(".")
+        print(line)
+        #words = line.split()
+        #print(words)
     file.close()
 
-with open(r'Lessons\myfiles\Example1.txt','r') as file:
+# for loop
+with open(r'Lessons\myfiles\book1.txt','r') as file:
     for line in file:
         print(line)
-    file.close()
+    file.close
 
-# read all line
-with open(r'Lessons\myfiles\Example1.txt','r') as file:
+# Read all lines into a list
+with open(r'Lessons\myfiles\book1.txt', 'r') as file:
     lines = file.readlines()
     print(lines)
     file.close()
 
 '''
-16.3 Writing to files 
-to write to files we use the write() method
+16.3 Writing to files
+TO write a string to a file use the 'write()' method
 '''
-with open(r'Lessons\myfiles\deadpool.txt','w') as file:
-    file.write("Hello my name is Deadpool. I am finally in a text file . . .")
-
+with open(r'Lessons\myfiles\output.txt','w') as file:
+    file.write("Hello world!\n Mr.E . . . . .")
     file.close()
 
-lines = ["First line\n", "Second Line\n","Third Line\n"]
-with open(r'Lessons\myfiles\deadpool.txt','w') as file:
+# write multiple lins
+lines = ["First line\n","Second line\n","THird line\n"]
+with open(r'Lessons\myfiles\output.txt','w') as file:
     file.writelines(lines)
     file.close()
 
-# append to the same file
-with open(r'Lessons\myfiles\deadpool.txt','a') as file:
-    file.write("This is my fourth line\n")
+
+# append to the same file output.txt
+with open(r'Lessons\myfiles\output.txt','a') as file:
+    file.write("This is an appended line\n")
+    file.close()
+
+
+'''
+16.4 Reading and Writing binarry files
+Binary files (e.g images,videos)
+'''
+print()
+with open(r'Lessons\myfiles\python_logo.jpg','rb') as file:
+    content = file.read()
+    print(content)
+    file.close()
+    
+with open(r'Lessons\myfiles\python_logo2.jpg','wb') as myfile:
+    # convert the binary data to a mutable bytearray
+    data = bytearray(content)
+    #white = bytes([255,255,255])
+    #red = bytes([255,0,0])
+    
+    # replace all occurences of white with red
+    #data = data.replace(white,red)
+
+    myfile.write(content)
+    myfile.close()
+
+# counting the number of words in file
+with open(r'Lessons\myfiles\output.txt','r') as file:
+    content = file.read()
+    words = content.split()
+    word_count = len(words)
+    print(f"Word count: {word_count}")
+    file.close()
+
+# Count the occurrences of a specific word
+with open(r'Lessons\myfiles\output.txt','r') as file:
+    content = file.read()
+    words = content.split()
+    specific_word = "line"
+    specific_word_count = words.count(specific_word)
+    print(f"{specific_word} count : {specific_word_count}")
+    file.close()
+
+# Count the number of lines
+with open(r'Lessons\myfiles\output.txt','r') as file:
+    lines = file.readlines()
+    line_count = len(lines)
+    print(f"Line count: {line_count}")
+    file.close()
+
+
+
+'''
+16.5 Bytearray objects
+A bytearray is a mutable sequence of bytes which can be used to manipulate bunary data
+
+bytearray(): Function to create a bytearray object.
+append(x): Appends a single byte to the end of the bytearray.
+extend(iterable): Appends elements from the iterable to the end of the bytearray.
+'''
+
+# Creata a byte array
+ba = bytearray([65,66,67,68])
+print(ba)
+
+# Modifying a bytearray
+ba[1] = 98
+print(ba)
+
+# convert to bytes
+b = bytes(ba)
+print(b)
+# bytearray methods
+ba.append(69)
+print(ba)
+
+ba.extend([70,71])
+print(ba)
+
+# write binary files and read using byteobjects
+with open(r'Lessons\myfiles\mybinary.bin','wb') as file:
+    file.write(b'\x00\x01\x02\x03\x04\x05')
+    file.close()
+
+
+with open(r'Lessons\myfiles\mybinary.bin','rb') as file:
+    content = file.read()
+    print(content)
+
+    ascii_string = content.decode('ascii',errors='ignore')
+    print(ascii_string)
+    hex_rep = content.hex()
+    print(hex_rep)
     file.close()
 
 '''
-16.4 Reading and Writing Binary files
-Binary files (images, videos)
+16.6 Advanced File operations
+File positioning refers to moving the file cursor to a specific location in the file
+
+seek(offset, whence): Moves the file cursor to a specific location.
+offset: Number of bytes to move.
+whence: Reference point (0 for beginning, 1 for current, 2 for end).
 '''
-with open(r'Lessons\myfiles\download (1).jpg','rb') as file:
-   binary_file = bytearray(file.read())
-   white = b'\x00\x00\x00'
-   red = b'xff\x00\x00'
+with open(r'Lessons\myfiles\output.txt','r') as file:
+    #Move the cursor to the 5th byte from the beginnning
+    file.seek(10,0)
+    
 
-   binary_data = binary_file.replace(white,red)
+    # Move the cursor 10 bytes from the current position
+    file.seek(10, 1)
 
-file.close()
+    # Move the cursor to 5 bytes before the end
+    file.seek(-5, 2)
+    
+    conentent = file.read()
+    print(conentent)
+    file.close()
 
+'''
+If you try to seek beyond the end of the file, seek() 
+will place the cursor at the end of the file. Subsequent reads will return an empty string.
 
+If you try to seek before the beginning of the file (using a negative offset from the beginning),
+ seek() will place the cursor at the start of the file.
 
-
-from PIL import Image
-# open the jpeg mimage
-img = Image.open(r'Lessons\myfiles\download (1).jpg')
-
-# conver the image to rgb mode if its not already
-img = img.convert('RGB')
-
-piels = img.load()
-
-width,height = img.size
-
-for i in range(width):
-    for j in range(height):
-        if piels[i,j] == (255,255,255):
-            piels[i,j] = (255,0,0)
-        
-
-img.save(r'Lessons\myfiles\download (2).jpg')
+seek() is often used with tell() to save and restore positions within a file. tell() returns 
+the current file position, which you can later use with seek() to return to that position.
+'''
