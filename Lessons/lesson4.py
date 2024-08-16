@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ---
 
 # ## Lesson Plan: Functions in Python
@@ -9,6 +10,17 @@
 # - Use parameters and return values.
 # - Differentiate between built-in and user-defined functions.
 # - Apply functions to solve problems.
+=======
+## Lesson Plan: Functions in Python
+
+### Objectives
+'''By the end of this lesson, students will be able to:
+- Understand what functions are and why they are used.
+- Define and call functions in Python.
+- Use parameters and return values.
+- Differentiate between built-in and user-defined functions.
+- Apply functions to solve problems.
+>>>>>>> 4ad542bb5e7021416ff630f5878ae5b4b817e3e4
 
 # ### Lesson Duration
 # 2 hours
@@ -254,6 +266,7 @@
 #      print(find_anagrams("listen", ["enlist", "google", "inlets", "banana"]))  # Output: ['enlist', 'inlets']
 #      ```
 
+<<<<<<< HEAD
 # 3. **Sudoku Validator**
 #    - Write a function `is_valid_sudoku(board)` that takes a 9x9 2D list representing a Sudoku board and returns `True` if the board is valid according to Sudoku rules, and `False` otherwise.
 #      ```python
@@ -261,6 +274,15 @@
 #          def is_valid_unit(unit):
 #              unit = [i for i in unit if i != '.']
 #              return len(unit) == len(set(unit))
+=======
+3. **Sudoku Validator**
+   - Write a function `is_valid_sudoku(board)` that takes a 9x9 2D list representing a Sudoku board and returns `True` if the board is valid according to Sudoku rules, and `False` otherwise.
+     ```python'''
+     def is_valid_sudoku(board):
+         def is_valid_unit(unit):
+             unit = [i for i in unit if i != '.']
+             return len(unit) == len(set(unit))
+>>>>>>> 4ad542bb5e7021416ff630f5878ae5b4b817e3e4
          
 #          for row in board:
 #              if not is_valid_unit(row):
@@ -290,8 +312,13 @@
 #          [".", ".", ".", ".", "8", ".", ".", "7", "9"]
 #      ]
      
+<<<<<<< HEAD
 #      print(is_valid_sudoku(sudoku_board))  # Output: True
 #      ```
 
 # ---
+=======
+     print(is_valid_sudoku(sudoku_board))  # Output: True
+
+>>>>>>> 4ad542bb5e7021416ff630f5878ae5b4b817e3e4
 
