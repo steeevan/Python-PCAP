@@ -22,6 +22,8 @@ Example Output:
 
 
 [{'name': 'Bob', 'age': 19}, {'name': 'Charlie', 'age': 22}, {'name': 'Alice', 'age': 24}]
+
+
 3. Closures:
 Problem: Create a closure that keeps track of how many times a function has been called.
 
@@ -37,6 +39,10 @@ Example Output:
 1
 2
 3
+
+
+
+
 4. I/O Operations:
 Problem: Write a program that reads a text file, counts the number of lines that contain a specific word, and prints the result.
 
@@ -53,6 +59,10 @@ Example Output:
 
 
 2
+
+
+
+
 5. Open/Read:
 Problem: Write a program that opens a file called data.txt, reads its contents, and prints each line with its line number.
 
